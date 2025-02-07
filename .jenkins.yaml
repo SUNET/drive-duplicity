@@ -1,0 +1,16 @@
+---
+environment_variables:
+  DUPLICITY_VERSION: "bookworm-slim-1"
+git:
+  branch: main
+triggers:
+  cron: "@daily"
+clean_workspace: true
+builders:
+  - docker
+docker_name: drive/duplicity
+docker_tags:
+  - "${DUPLICITY_VERSION}"
+  - "latest"
+docker_no_cache: true
+
